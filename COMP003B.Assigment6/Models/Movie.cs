@@ -11,6 +11,6 @@ namespace COMP003B.Assigment6.Models
 
         public int Year { get; set; }
 
-        public virtual ICollection<MovieActor> MovieActors { get; set; }
+        public virtual ICollection<MovieActor>? MovieActors { get; set; }
     }
 }

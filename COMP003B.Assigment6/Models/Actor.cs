@@ -12,6 +12,6 @@ namespace COMP003B.Assigment6.Models
 
         public int Age { get; set; }
 
-        public virtual ICollection<MovieActor> MovieActors { get; set; }
+        public virtual ICollection<MovieActor>? MovieActors { get; set; }
     }
 }
