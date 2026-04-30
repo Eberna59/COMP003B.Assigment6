@@ -13,7 +13,7 @@ namespace COMP003B.Assigment6
             builder.Services.AddControllersWithViews();
 
             builder.Services.AddDbContext<AppDbContext>(options =>
-                options.UseSqlServer("Name=ConnectionStrings: DefaultConnection"));
+                options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 
             var app = builder.Build();
 
