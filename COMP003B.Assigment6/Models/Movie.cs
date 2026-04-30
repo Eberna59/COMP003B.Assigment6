@@ -7,7 +7,7 @@ namespace COMP003B.Assigment6.Models
         public int MovieId { get; set; }
 
         [Required]
-        public string Title { get; set; }
+        public string? Title { get; set; }
 
         public int Year { get; set; }
 
