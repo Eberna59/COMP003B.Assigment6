@@ -1,3 +1,6 @@
+using COMP003B.Assigment6.Data;
+using Microsoft.EntityFrameworkCore;
+
 namespace COMP003B.Assigment6
 {
     public class Program
@@ -8,6 +11,9 @@ namespace COMP003B.Assigment6
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+
+            builder.Services.AddDbContext<AppDbContext>(options =>
+                options.UseSqlServer("Name=ConnectionStrings: DefaultConnection"));
 
             var app = builder.Build();
 
