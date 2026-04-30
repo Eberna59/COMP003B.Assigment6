@@ -43,6 +43,17 @@ namespace COMP003B.Assigment6.Controllers
                 return NotFound();
             }
 
+            ViewBag.Movie = from ma in _context.MovieActors
+                            join m in _context.Movies on ma.MovieId equals m.MovieId
+                            where ma.MovieId == id
+                            select m;
+
+            ViewBag.Actor = from ma in _context.MovieActors
+                            join a in _context.Actors on ma.ActorId equals a.ActorID
+                            where ma.MovieId == id
+                            select a;
+
+
             return View(movieActor);
         }
 

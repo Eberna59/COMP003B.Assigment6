@@ -40,6 +40,12 @@ namespace COMP003B.Assigment6.Controllers
                 return NotFound();
             }
 
+            ViewBag.Movies = from a in _context.Actors
+                             join ma in _context.MovieActors on a.ActorID equals ma.ActorId
+                             join m in _context.Movies on ma.MovieId equals m.MovieId
+                             where a.ActorID == id
+                             select m;
+
             return View(actor);
         }
 
